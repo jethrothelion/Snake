@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-int randomNum();
-void addElementToArray;
+int randomNum(int range, int takenNums[], int takenCount);
+void addElementToArray(int target, int *array, int *counter);
 
 int main(void)
 {
@@ -43,18 +43,25 @@ int main(void)
     int randomNum(int range, int[] takenNums)
     //Give random number in a range of numbers
     {
-        for (int i = 0; i < rangeOf(takenNums); i++)
+
+        bool aDuplicate;
+        int theRandomNum
+
+        do
         {
             int theRandomNum = min + rand() % (max - min + 1);
-            if (takenNums[i] == theRandomNum)
+            aDuplicate = false;
+
+            for (int i = 0; i < takenCount; i++)
             {
-                i -= 1;
+                if (takenNums[i] == theRandomNum)
+                {
+                    aDuplicate = true;
+                    break;
+                }
             }
-            else
-            {
-                break;
-            }
-        }
+        } while(aDuplicate);
+
         return theRandomNum;
     }
 
